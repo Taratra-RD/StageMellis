@@ -1,0 +1,161 @@
+{
+    "Utilisateur": {
+        "matricule":"",
+        "nom":"",
+        "Prenom":"",
+        "ip":"",
+        "societeId": 0,
+        "contact":"",
+        "mail":""
+    },
+    "societe":{
+        "societyName":"",
+        "service":""
+    },
+    "Ecran": {
+        "MarqueId": 0,
+        "Reference": "",
+        "Dimension": "",
+        "PortId": 0,
+        "S/N": "",
+        "userId":"",
+        "typeEcranId": 0,
+        "EtatId": 0,
+        "DateId": 0
+    },
+    "typeEcran": {
+        "designationTypeEcran": ""
+    },
+    "Etat": {
+        "designationEtat": ""
+    },
+    "Date": {
+        "dateDachat": "",
+        "DateDeMisAjourId": 0
+    },
+    "DateDeMisAjour": {
+        "typeDate":"",
+        "Date": ""
+    },
+    "Souris": {
+        "MarqueId": 0,
+        "Nombre de bouton": "",
+        "InterfaceId": 0,
+        "S/N": "",
+        "userId":"",
+        "EtatId": 0,
+        "DateId":0
+    },
+    "Interface": {
+        "TypeInterface": ""
+    },
+    "Clavier": {
+        "MarqueId": 0,
+        "TypeClavierId": 0,
+        "InterfaceId": 0,
+        "userId":"",
+        "S/N": "",
+        "EtatId": 0,
+        "DateId": 0
+    },
+    "Marque": {
+        "designation": ""
+    },
+    "TypeClavier": {
+        "DesignationTypeClavier": ""
+    },
+    "Onduleur": {
+        "Autonomie": "",
+        "userId":"",
+        "EtatId": 0,
+        "DateId": 0
+    },
+    "Cable": {
+        "TypeCableId": 0,
+        "longueur": "",
+        "EtatId": 0,
+        "userId":"",
+        "DateId": 0
+    },
+    "TypeCable": {
+        "designationTypeCable": ""
+    },
+    "Boitier": {
+        "name":"",
+        "userId":""
+    },
+    "RAM": {
+        "MarqueId": 0,
+        "TypeRAMId": 0,
+        "Frequence": "",
+        "Capacite": "",
+        "boitierId": 0,
+        "S/N": "",
+        "EtatId": 0,
+        "DateId": 0
+    },
+    "TypeRAM": {
+        "designationTypeRAM": ""
+    },
+    "Hdd": {
+        "MarqueId": 0,
+        "TypeHddId": 0,
+        "Capacite": "",
+        "TailleId": 0,
+        "boitierId": 0,
+        "S/N": "",
+        "EtatId": 0,
+        "DateId": 0
+    },
+    "TypeHdd": {
+        "designationTypeHdd": ""
+    },
+    "Taille": {
+        "designationTailleHdd": ""
+    },
+    "Lecteur": {
+        "MarqueId": 0,
+        "TypeLecteur": "",
+        "boitierId": 0,
+        "S/N": "",
+        "EtatId": 0,
+        "DateId": 0
+    },
+    "CPU": {
+        "MarqueId": 0,
+        "ReferenceId": 0,
+        "TypeCPUId": 0,
+        "boitierId": 0,
+        "EtatId": 0,
+        "Date": 0
+    },
+    "Reference": {
+        "DesignationCpuRef": ""
+    },
+    "TypeCPU": {
+        "DesignationTypeCpu": ""
+    },
+    "Carte mere": {
+        "MarqueId": 0,
+        "ReferenceMBId": 0,
+        "boitierId": 0,
+        "TypeMB": "",
+        "S/N": "",
+        "EtatId": 0,
+        "DateId": 0
+    },
+    "ReferenceMB": {
+        "Designation": ""
+    },
+    "Alimentation": {
+        "MarqueId": 0,
+        "Puissance": "",
+        "boitierId": 0,
+        "S/N": "",
+        "EtatId": 0,
+        "DateId": 0
+    },
+    "port":{
+        "designationPort":""
+    }
+}

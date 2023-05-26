@@ -1,0 +1,61 @@
+<?php
+
+namespace App\Controller;
+
+use App\Entity\User;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Serializer\SerializerInterface;
+
+class UserController extends AbstractController
+{
+    private $entityManager;
+
+    public function __construct(EntityManagerInterface $entityManager)
+    {
+        $this->entityManager = $entityManager;
+    }
+
+    /**
+     * Handle POST request to create a User entity.
+     */
+    #[Route('/api/manage/user', name:'app-manage_user_post', methods:['POST'])]
+    public function postPost(Request $request, SerializerInterface $serializer)
+    {
+        // Retrieve the JSON data from the request
+        $jsonRecu = $request->getContent();
+
+        try {
+            // Deserialize the JSON data into a User object
+            $user = $serializer->deserialize($jsonRecu, User::class, 'json');
+
+            // Persist the User entity
+            $this->entityManager->persist($user);
+            $this->entityManager->flush();
+
+            // Return a JSON response with the created User entity
+            return $this->json($user, 201, ['message' => 'User entity created successfully'], ['groups' => 'user:write']);
+        } catch (\Throwable $e) {
+            // Return a JSON response in case of an error
+            return $this->json([
+                'status' => 400,
+                'message' => $e->getMessage(),
+            ], 400);
+        }
+    }
+    
+    /**
+     * Handle GET request to retrieve all User entities.
+     */
+    #[Route('/api/manage/user', name:'app-manage_user', methods:['GET'])]
+    public function getUsers()
+    {
+        // Retrieve all User entities from the database
+        $user = $this->entityManager->getRepository(User::class)->findAll();
+
+        // Return a JSON response with the retrieved User entities
+        return $this->json($user, 200, [], ['groups' => 'user:read']);
+    }
+}

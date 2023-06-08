@@ -13,19 +13,22 @@ class Clavier
     #[ORM\GeneratedValue]
     #[ORM\Column]
     #[Groups([
-        'clavier:read'
+        'clavier:read',
+        'user:read'
     ])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     #[Groups([
-        'clavier:read', 'clavier:write'
+        'clavier:read', 'clavier:write',
+        'user:read', 'user:write'
     ])]
     private ?string $sn = null;
 
     #[ORM\OneToOne(inversedBy: 'clavier', cascade: ['persist', 'remove'])]
     #[Groups([
-        'clavier:read', 'clavier:write'
+        'clavier:read', 'clavier:write',
+        'user:read', 'user:write'
     ])]
     private ?InterfacePort $interface = null;
 
@@ -37,25 +40,29 @@ class Clavier
 
     #[ORM\OneToOne(inversedBy: 'clavier', cascade: ['persist', 'remove'])]
     #[Groups([
-        'clavier:read', 'clavier:write'
+        'clavier:read', 'clavier:write',
+        'user:read', 'user:write'
     ])]
     private ?Etat $etat = null;
 
     #[ORM\OneToOne(inversedBy: 'clavier', cascade: ['persist', 'remove'])]
     #[Groups([
-        'clavier:read', 'clavier:write'
+        'clavier:read', 'clavier:write',
+        'user:read', 'user:write'
     ])]
     private ?Date $date = null;
 
     #[ORM\OneToOne(mappedBy: 'clavier', cascade: ['persist', 'remove'])]
     #[Groups([
-        'clavier:read', 'clavier:write'
+        'clavier:read', 'clavier:write',
+        'user:read', 'user:write'
     ])]
     private ?Marque $marque = null;
 
     #[ORM\OneToOne(mappedBy: 'clavier', cascade: ['persist', 'remove'])]
     #[Groups([
-        'clavier:read', 'clavier:write'
+        'clavier:read', 'clavier:write',
+        'user:read', 'user:write'
     ])]
     private ?TypeClavier $typeClavier = null;
 

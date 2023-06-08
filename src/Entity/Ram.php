@@ -14,35 +14,40 @@ class Ram
     #[ORM\Column]
     #[Groups([
         'ram:read',
-        'boitier:read'
+        'boitier:read',
+        'user:read'
     ])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
     #[Groups([
         'ram:read', 'ram:write',
-        'boitier:read', 'boitier:write'
+        'boitier:read', 'boitier:write',
+        'user:read', 'user:write'
     ])]
     private ?string $frequence = null;
 
     #[ORM\Column(length: 255)]
     #[Groups([
         'ram:read', 'ram:write',
-        'boitier:read', 'boitier:write'
+        'boitier:read', 'boitier:write',
+        'user:read', 'user:write'
     ])]
     private ?string $capacite = null;
 
     #[ORM\Column(length: 255)]
     #[Groups([
         'ram:read', 'ram:write',
-        'boitier:read', 'boitier:write'
+        'boitier:read', 'boitier:write',
+        'user:read', 'user:write'
     ])]
     private ?string $sn = null;
 
     #[ORM\OneToOne(inversedBy: 'ram', cascade: ['persist', 'remove'])]
     #[Groups([
         'ram:read', 'ram:write',
-        'boitier:read'
+        'boitier:read',
+        'user:read', 'user:write'
     ])]
     private ?Marque $marque = null;
 
@@ -52,21 +57,24 @@ class Ram
     #[ORM\OneToOne(inversedBy: 'ram', cascade: ['persist', 'remove'])]
     #[Groups([
         'ram:read', 'ram:write',
-        'boitier:read'
+        'boitier:read',
+        'user:read', 'user:write'
     ])]
     private ?Etat $etat = null;
 
     #[ORM\OneToOne(inversedBy: 'ram', cascade: ['persist', 'remove'])]
     #[Groups([
         'ram:read', 'ram:write',
-        'boitier:read'
+        'boitier:read',
+        'user:read', 'user:write'
     ])]
     private ?Date $date = null;
 
     #[ORM\OneToOne(mappedBy: 'ram', cascade: ['persist', 'remove'])]
     #[Groups([
         'ram:read', 'ram:write',
-        'boitier:read'
+        'boitier:read',
+        'user:read', 'user:write'
     ])]
     private ?TypeRam $typeRam = null;
 

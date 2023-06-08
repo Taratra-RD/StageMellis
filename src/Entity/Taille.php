@@ -14,14 +14,16 @@ class Taille
     #[ORM\Column]
     #[Groups([
         'tailleHdd:read',
-        'hdd:read'
+        'hdd:read',
+        'user:read'
     ])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
     #[Groups([
         'tailleHdd:read', 'tailleHdd:write',
-        'hdd:read', 'hdd:write'
+        'hdd:read', 'hdd:write',
+        'user:read', 'user:write'
     ])]
     private ?string $designationTailleHdd = null;
 

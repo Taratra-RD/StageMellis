@@ -21,7 +21,8 @@ class Date
         'lecteur:read',
         'onduleur:read',
         'ram:read',
-        'souris:read'
+        'souris:read',
+        'user:read'
     ])]
     private ?int $id = null;
 
@@ -36,7 +37,8 @@ class Date
         'lecteur:read', 'lecteur:write',
         'onduleur:read', 'onduleur:write',
         'ram:read', 'ram:write',
-        'souris:read', 'souris:write'
+        'souris:read', 'souris:write',
+        'user:read', 'user:write'
     ])]
     private ?\DateTimeImmutable $CreatedAt = null;
 

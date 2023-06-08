@@ -12,13 +12,17 @@ class TypeCable
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups('typeCable:read')]
+    #[Groups([
+        'typeCable:read',
+        'user:read'
+        ])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
     #[Groups([
         'typeCable:read', 'typeCable:write',
-        'cable:read', 'cable:write'
+        'cable:read', 'cable:write',
+        'user:read', 'user:write'
     ])]
     private ?string $designationTypeCable = null;
 

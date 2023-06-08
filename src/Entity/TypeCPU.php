@@ -14,14 +14,16 @@ class TypeCPU
     #[ORM\Column]
     #[Groups([
         'typeCpu:read',
-        'cpu:read'
+        'cpu:read',
+        'user:read'
         ])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
     #[Groups([
         'typeCpu:read', 'typeCpu:write',
-        'cpu:read', 'cpu:write'
+        'cpu:read', 'cpu:write',
+        'user:read', 'user:write'
         ])]
     private ?string $designationTypeCpu = null;
 

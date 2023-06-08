@@ -14,14 +14,16 @@ class Port
     #[ORM\Column]
     #[Groups([
         'port:read',
-        'ecran:read'
+        'ecran:read',
+        'user:read'
     ])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
     #[Groups([
         'port:read', 'port:write',
-        'ecran:read', 'ecran:write'
+        'ecran:read', 'ecran:write',
+        'user:read', 'user:write'
     ])]
     private ?string $designationPort = null;
 

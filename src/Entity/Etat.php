@@ -22,7 +22,8 @@ class Etat
         'lecteur:read',
         'onduleur:read',
         'ram:read',
-        'souris:read'
+        'souris:read',
+        'user:read'
     ])]
     private ?int $id = null;
 
@@ -41,7 +42,8 @@ class Etat
         'lecteur:read', 'lecteur:write',
         'onduleur:read', 'onduleur:write',
         'ram:read', 'ram:write',
-        'souris:read', 'souris:write'
+        'souris:read', 'souris:write',
+        'user:read', 'user:write'
     ])]
     private ?string $designationEtat = null;
 
@@ -57,7 +59,8 @@ class Etat
         'lecteur:read', 'lecteur:write',
         'onduleur:read', 'onduleur:write',
         'ram:read', 'ram:write',
-        'souris:read', 'souris:write'
+        'souris:read', 'souris:write',
+        'user:read', 'user:write'
     ])]
     private ?string $description = null;
 

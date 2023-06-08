@@ -22,7 +22,8 @@ class Marque
         'hdd:read',
         'lecteur:read',
         'ram:read',
-        'souris:read'
+        'souris:read',
+        'user:read'
     ])]
     private ?int $id = null;
 
@@ -37,7 +38,8 @@ class Marque
         'hdd:read', 'hdd:write',
         'lecteur:read', 'lecteur:write',
         'ram:read', 'ram:write',
-        'souris:read', 'souris:write'
+        'souris:read', 'souris:write',
+        'user:read', 'user:write'
     ])]
     private ?string $designation = null;
 

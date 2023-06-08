@@ -13,13 +13,15 @@ class Societe
     #[ORM\GeneratedValue]
     #[ORM\Column]
     #[Groups([
-        'societe:read'
+        'societe:read',
+        'user:read'
     ])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
     #[Groups([
-        'societe:read', 'societe:write'
+        'societe:read', 'societe:write',
+        'user:read', 'user:write'
     ])]
     private ?string $societyName = null;
 

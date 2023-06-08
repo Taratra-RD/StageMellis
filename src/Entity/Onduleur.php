@@ -13,7 +13,8 @@ class Onduleur
     #[ORM\GeneratedValue]
     #[ORM\Column]
     #[Groups([
-        'onduleur:read'
+        'onduleur:read',
+        'user:read'
     ])]
     private ?int $id = null;
 
@@ -28,13 +29,15 @@ class Onduleur
 
     #[ORM\OneToOne(inversedBy: 'onduleur', cascade: ['persist', 'remove'])]
     #[Groups([
-        'onduleur:read', 'onduleur:write'
+        'onduleur:read', 'onduleur:write',
+        'user:read', 'user:write'
     ])]
     private ?Etat $etat = null;
 
     #[ORM\OneToOne(inversedBy: 'onduleur', cascade: ['persist', 'remove'])]
     #[Groups([
-        'onduleur:read', 'onduleur:write'
+        'onduleur:read', 'onduleur:write',
+        'user:read', 'user:write'
     ])]
     private ?Date $date = null;
 

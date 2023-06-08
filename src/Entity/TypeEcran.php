@@ -12,14 +12,20 @@ class TypeEcran
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups('typeEcran:read')]
+    #[Groups([
+        'typeEcran:read',
+        'user:read'
+        ])]
     private ?int $id = null;
 
     #[ORM\OneToOne(cascade: ['persist', 'remove'])]
     private ?Ecran $ecran = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups('typeEcran:read', 'typeEcran:write')]
+    #[Groups([
+        'typeEcran:read', 'typeEcran:write',
+        'user:read', 'user:write'
+        ])]
     private ?string $designationTypeEcran = null;
 
     public function getId(): ?int

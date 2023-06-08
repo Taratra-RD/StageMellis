@@ -15,52 +15,60 @@ class Boitier
     #[ORM\GeneratedValue]
     #[ORM\Column]
     #[Groups([
-        'boitier:read'
+        'boitier:read',
+        'user:read'
     ])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
     #[Groups([
-        'boitier:read', 'boitier:write'
+        'boitier:read', 'boitier:write',
+        'user:read', 'user:write'
     ])]
     private ?string $name = null;
 
     #[ORM\ManyToOne(inversedBy: 'boitiers')]
     private ?User $utilisateur = null;
 
-    #[ORM\OneToMany(mappedBy: 'boitier', targetEntity: Ram::class)]
+    #[ORM\OneToMany(mappedBy: 'boitier', targetEntity: Ram::class, cascade: ['persist', 'remove'])]
     #[Groups([
-        'boitier:read', 'boitier:write'
+        'boitier:read', 'boitier:write',
+        'user:read', 'user:write'
     ])]
     private Collection $rams;
 
-    #[ORM\OneToMany(mappedBy: 'boitier', targetEntity: Hdd::class)]
+    #[ORM\OneToMany(mappedBy: 'boitier', targetEntity: Hdd::class, cascade: ['persist', 'remove'])]
     #[Groups([
-        'boitier:read', 'boitier:write'
+        'boitier:read', 'boitier:write',
+        'user:read', 'user:write'
     ])]
     private Collection $hdds;
 
     #[ORM\OneToOne(mappedBy: 'boitier', cascade: ['persist', 'remove'])]
     #[Groups([
-        'boitier:read', 'boitier:write'
+        'boitier:read', 'boitier:write',
+        'user:read', 'user:write'
     ])]
     private ?Lecteur $lecteur = null;
 
-    #[ORM\OneToMany(mappedBy: 'boitier', targetEntity: CPU::class)]
+    #[ORM\OneToMany(mappedBy: 'boitier', targetEntity: CPU::class, cascade: ['persist', 'remove'])]
     #[Groups([
-        'boitier:read', 'boitier:write'
+        'boitier:read', 'boitier:write',
+        'user:read', 'user:write'
     ])]
     private Collection $cPUs;
 
     #[ORM\OneToOne(mappedBy: 'boitier', cascade: ['persist', 'remove'])]
     #[Groups([
-        'boitier:read', 'boitier:write'
+        'boitier:read', 'boitier:write',
+        'user:read', 'user:write'
     ])]
     private ?CarteMere $carteMere = null;
 
     #[ORM\OneToOne(mappedBy: 'boitier', cascade: ['persist', 'remove'])]
     #[Groups([
-        'boitier:read', 'boitier:write'
+        'boitier:read', 'boitier:write',
+        'user:read', 'user:write'
     ])]
     private ?Alimentation $alimentation = null;
 

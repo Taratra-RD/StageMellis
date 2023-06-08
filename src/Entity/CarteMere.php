@@ -14,12 +14,16 @@ class CarteMere
     #[ORM\Column]
     #[Groups([
         'carteMere:read',
-        'boitier:read'
+        'boitier:read',
+        'user:read'
     ])]
     private ?int $id = null;
 
     #[ORM\OneToOne(inversedBy: 'carteMere', cascade: ['persist', 'remove'])]
-    #[Groups(['carteMere:read', 'carteMere:write'])]
+    #[Groups([
+        'carteMere:read', 'carteMere:write',
+        'user:read', 'user:write'
+        ])]
     private ?Marque $marque = null;
 
     #[ORM\OneToOne(inversedBy: 'carteMere', cascade: ['persist', 'remove'])]
@@ -28,35 +32,40 @@ class CarteMere
     #[ORM\Column(length: 255)]
     #[Groups([
         'carteMere:read', 'carteMere:write',
-        'boitier:read', 'boitier:write'
+        'boitier:read', 'boitier:write',
+        'user:read', 'user:write'
     ])]
     private ?string $typeMB = null;
 
     #[ORM\Column(length: 255)]
     #[Groups([
         'carteMere:read', 'carteMere:write',
-        'boitier:read', 'boitier:write'
+        'boitier:read', 'boitier:write',
+        'user:read', 'user:write'
     ])]
     private ?string $sn = null;
 
     #[ORM\OneToOne(inversedBy: 'carteMere', cascade: ['persist', 'remove'])]
     #[Groups([
         'carteMere:read', 'carteMere:write',
-        'boitier:read', 'boitier:write'
+        'boitier:read', 'boitier:write',
+        'user:read', 'user:write'
     ])]
     private ?Etat $etat = null;
 
     #[ORM\OneToOne(inversedBy: 'carteMere', cascade: ['persist', 'remove'])]
     #[Groups([
         'carteMere:read', 'carteMere:write',
-        'boitier:read', 'boitier:write'
+        'boitier:read', 'boitier:write',
+        'user:read', 'user:write'
     ])]
     private ?Date $date = null;
 
     #[ORM\OneToOne(mappedBy: 'cartemere', cascade: ['persist', 'remove'])]
     #[Groups([
         'carteMere:read', 'carteMere:write',
-        'boitier:read', 'boitier:write'
+        'boitier:read', 'boitier:write',
+        'user:read', 'user:write'
     ])]
     private ?ReferenceMB $referenceMB = null;
 

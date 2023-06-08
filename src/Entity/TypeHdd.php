@@ -14,14 +14,16 @@ class TypeHdd
     #[ORM\Column]
     #[Groups([
         'typeHdd:read',
-        'hdd:read'
+        'hdd:read',
+        'user:read'
     ])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
     #[Groups([
         'typeHdd:read', 'typeHdd:write',
-        'hdd:read', 'hdd:write'
+        'hdd:read', 'hdd:write',
+        'user:read', 'user:write'
     ])]
     private ?string $designationTypeHdd = null;
 

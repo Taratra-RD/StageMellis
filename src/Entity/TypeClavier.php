@@ -14,14 +14,16 @@ class TypeClavier
     #[ORM\Column]
     #[Groups([
         'typeClavier:read',
-        'clavier:read'
+        'clavier:read',
+        'user:read'
     ])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
     #[Groups([
         'typeClavier:read', 'typeClavier:write',
-        'clavier:read', 'clavier:write'
+        'clavier:read', 'clavier:write',
+        'user:read', 'user:write'
         ])]
     private ?string $designationTypeClavier = null;
 

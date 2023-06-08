@@ -12,23 +12,38 @@ class Cable
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups('cable:read')]
+    #[Groups([
+        'cable:read',
+        'user:read'
+        ])]
     private ?int $id = null;
 
     #[ORM\Column(nullable: true)]
-    #[Groups('cable:read', 'cable:write')]
+    #[Groups([
+        'cable:read', 'cable:write',
+        'user:read', 'user:write'
+        ])]
     private ?int $longueur = null;
 
     #[ORM\OneToOne(inversedBy: 'cable', cascade: ['persist', 'remove'])]
-    #[Groups('cable:read', 'cable:write')]
+    #[Groups([
+        'cable:read', 'cable:write',
+        'user:read', 'user:write'
+        ])]
     private ?Etat $etat = null;
 
     #[ORM\OneToOne(inversedBy: 'cable', cascade: ['persist', 'remove'])]
-    #[Groups('cable:read', 'cable:write')]
+    #[Groups([
+        'cable:read', 'cable:write',
+        'user:read', 'user:write'
+        ])]
     private ?Date $date = null;
 
     #[ORM\OneToOne(mappedBy: 'cable', cascade: ['persist', 'remove'])]
-    #[Groups('cable:read', 'cable:write')]
+    #[Groups([
+        'cable:read', 'cable:write',
+        'user:read', 'user:write'
+        ])]
     private ?TypeCable $typeCable = null;
 
     public function getId(): ?int

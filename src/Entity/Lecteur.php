@@ -14,21 +14,23 @@ class Lecteur
     #[ORM\Column]
     #[Groups([
         'lecteur:read',
-        'boitier:read'
+        'boitier:read',
+        'user:read'
     ])]
     private ?int $id = null;
 
     #[ORM\OneToOne(inversedBy: 'lecteur', cascade: ['persist', 'remove'])]
     #[Groups([
         'lecteur:read', 'lecteur:write',
-        'boitier:read', 'boitier:write'
+        'boitier:read', 'boitier:write',
+        'user:read', 'user:write'
     ])]
     private ?Marque $marque = null;
 
     #[ORM\Column(length: 255)]
     #[Groups([
         'lecteur:read', 'lecteur:write',
-        'boitier:read', 'boitier:write'
+        'user:read', 'user:write'
     ])]
     private ?string $typeLecteur = null;
 
@@ -38,21 +40,24 @@ class Lecteur
     #[ORM\Column(length: 255)]
     #[Groups([
         'lecteur:read', 'lecteur:write',
-        'boitier:read', 'boitier:write'
+        'boitier:read', 'boitier:write',
+        'user:read', 'user:write'
     ])]
     private ?string $sn = null;
 
     #[ORM\OneToOne(inversedBy: 'lecteur', cascade: ['persist', 'remove'])]
     #[Groups([
         'lecteur:read', 'lecteur:write',
-        'boitier:read', 'boitier:write'
+        'boitier:read', 'boitier:write',
+        'user:read', 'user:write'
     ])]
     private ?Etat $etat = null;
 
     #[ORM\OneToOne(inversedBy: 'lecteur', cascade: ['persist', 'remove'])]
     #[Groups([
         'lecteur:read', 'lecteur:write',
-        'boitier:read', 'boitier:write'
+        'boitier:read', 'boitier:write',
+        'user:read', 'user:write'
     ])]
     private ?Date $date = null;
 

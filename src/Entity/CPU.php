@@ -14,14 +14,16 @@ class CPU
     #[ORM\Column]
     #[Groups([
         'cpu:read',
-        'boitier:read'
+        'boitier:read',
+        'user:read'
     ])]
     private ?int $id = null;
 
     #[ORM\OneToOne(inversedBy: 'cPU', cascade: ['persist', 'remove'])]
     #[Groups([
         'cpu:read', 'cpu:write',
-        'boitier:read', 'boitier:write'
+        'boitier:read', 'boitier:write',
+        'user:read', 'user:write'
     ])]
     private ?Marque $marque = null;
 
@@ -31,21 +33,24 @@ class CPU
     #[ORM\OneToOne(inversedBy: 'cPU', cascade: ['persist', 'remove'])]
     #[Groups([
         'cpu:read', 'cpu:write',
-        'boitier:read', 'boitier:write'
+        'boitier:read', 'boitier:write',
+        'user:read', 'user:write'
     ])]
     private ?Etat $etat = null;
 
     #[ORM\OneToOne(inversedBy: 'cPU', cascade: ['persist', 'remove'])]
     #[Groups([
         'cpu:read', 'cpu:write',
-        'boitier:read', 'boitier:write'
+        'boitier:read', 'boitier:write',
+        'user:read', 'user:write'
     ])]
     private ?Date $date = null;
 
     #[ORM\OneToOne(mappedBy: 'cpu', cascade: ['persist', 'remove'])]
     #[Groups([
         'cpu:read', 'cpu:write',
-        'boitier:read', 'boitier:write'
+        'boitier:read', 'boitier:write',
+        'user:read', 'user:write'
     ])]
     private ?TypeCPU $typeCPU = null;
 

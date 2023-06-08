@@ -14,14 +14,16 @@ class TypeRam
     #[ORM\Column]
     #[Groups([
         'typeRam:read',
-        'ram:read'
+        'ram:read',
+        'user:read'
     ])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
     #[Groups([
         'typeRam:read', 'typeRam:write',
-        'ram:read', 'ram:write'
+        'ram:read', 'ram:write',
+        'user:read', 'user:write'
     ])]
     private ?string $designationTypeRam = null;
 

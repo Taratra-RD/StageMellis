@@ -21,7 +21,8 @@ class DateMisAJour
         'lecteur:read',
         'onduleur:read',
         'ram:read',
-        'souris:read'
+        'souris:read',
+        'user:read', 'user:write'
     ])]
     private ?int $id = null;
 
@@ -36,7 +37,8 @@ class DateMisAJour
         'lecteur:read', 'lecteur:write',
         'onduleur:read', 'onduleur:write',
         'ram:read', 'ram:write',
-        'souris:read', 'souris:write'
+        'souris:read', 'souris:write',
+        'user:read', 'user:write'
     ])]
     private ?Date $date = null;
 
@@ -51,7 +53,8 @@ class DateMisAJour
         'lecteur:read', 'lecteur:write',
         'onduleur:read', 'onduleur:write',
         'ram:read', 'ram:write',
-        'souris:read', 'souris:write'
+        'souris:read', 'souris:write',
+        'user:read', 'user:write'
     ])]
     private ?string $typeDate = null;
 
@@ -66,7 +69,8 @@ class DateMisAJour
         'lecteur:read', 'lecteur:write',
         'onduleur:read', 'onduleur:write',
         'ram:read', 'ram:write',
-        'souris:read', 'souris:write'
+        'souris:read', 'souris:write',
+        'user:read', 'user:write'
     ])]
     private ?\DateTimeImmutable $updateAt = null;
 

@@ -69,25 +69,25 @@ class User implements UserInterface
     ])]
     private ?string $mail = null;
 
-    #[ORM\OneToMany(mappedBy: 'utilisateur', targetEntity: Ecran::class)]
+    #[ORM\OneToMany(mappedBy: 'utilisateur', targetEntity: Ecran::class, cascade: ['persist', 'remove'])]
     #[Groups([
         'user:read', 'user:write'
     ])]
     private Collection $ecrans;
 
-    #[ORM\OneToMany(mappedBy: 'utilisateur', targetEntity: Souris::class)]
+    #[ORM\OneToMany(mappedBy: 'utilisateur', targetEntity: Souris::class, cascade: ['persist', 'remove'])]
     #[Groups([
         'user:read', 'user:write'
     ])]
     private Collection $souris;
 
-    #[ORM\OneToMany(mappedBy: 'utilisateur', targetEntity: Clavier::class)]
+    #[ORM\OneToMany(mappedBy: 'utilisateur', targetEntity: Clavier::class, cascade: ['persist', 'remove'])]
     #[Groups([
         'user:read', 'user:write'
     ])]
     private Collection $claviers;
 
-    #[ORM\OneToMany(mappedBy: 'utilisateur', targetEntity: Onduleur::class)]
+    #[ORM\OneToMany(mappedBy: 'utilisateur', targetEntity: Onduleur::class, cascade: ['persist', 'remove'])]
     #[Groups([
         'user:read', 'user:write'
     ])]
@@ -99,7 +99,7 @@ class User implements UserInterface
     ])]
     private ?TypeCable $typeCable = null;
 
-    #[ORM\OneToMany(mappedBy: 'utilisateur', targetEntity: Boitier::class)]
+    #[ORM\OneToMany(mappedBy: 'utilisateur', targetEntity: Boitier::class, cascade: ['persist', 'remove'])]
     #[Groups([
         'user:read', 'user:write'
     ])]

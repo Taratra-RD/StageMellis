@@ -49,7 +49,7 @@ class EcranController extends AbstractController
     /**
      * Handle GET request to retrieve all Port entities.
      */
-    #[Route('/api/manage/port', name: 'app-manage_port', methods: ['GET'])]
+    #[Route('/api/manage/ecran', name: 'app-manage_ecran', methods: ['GET'])]
     public function getEcran()
     {
         // Retrieve all Port entities from the database

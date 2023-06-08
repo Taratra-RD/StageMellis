@@ -14,63 +14,70 @@ class Hdd
     #[ORM\Column]
     #[Groups([
         'hdd:read',
-        'boitier:read'
+        'boitier:read',
+        'user:read'
     ])]
     private ?int $id = null;
 
     #[ORM\OneToOne(inversedBy: 'hdd', cascade: ['persist', 'remove'])]
     #[Groups([
         'hdd:read', 'hdd:write',
-        'boitier:read', 'boitier:write'
+        'boitier:read', 'boitier:write',
+        'user:read', 'user:write'
     ])]
     private ?Marque $marque = null;
 
     #[ORM\Column(length: 255)]
     #[Groups([
         'hdd:read', 'hdd:write',
-        'boitier:read', 'boitier:write'
+        'boitier:read', 'boitier:write',
+        'user:read', 'user:write'
     ])]
     private ?string $capacite = null;
 
     #[ORM\ManyToOne(inversedBy: 'hdds')]
     #[Groups([
-        'hdd:read', 'hdd:write',
-        'boitier:read', 'boitier:write'
+        'hdd:read', 'hdd:write'
     ])]
     private ?Boitier $boitier = null;
 
     #[ORM\Column(length: 255)]
     #[Groups([
         'hdd:read', 'hdd:write',
-        'boitier:read', 'boitier:write'
+        'boitier:read', 'boitier:write',
+        'user:read', 'user:write'
     ])]
     private ?string $sn = null;
 
     #[ORM\OneToOne(inversedBy: 'hdd', cascade: ['persist', 'remove'])]
     #[Groups([
         'hdd:read', 'hdd:write',
-        'boitier:read'
+        'boitier:read',
+        'user:read', 'user:write'
     ])]
     private ?Etat $etat = null;
 
     #[ORM\OneToOne(inversedBy: 'hdd', cascade: ['persist', 'remove'])]
     #[Groups([
         'hdd:read', 'hdd:write',
-        'boitier:read'
+        'boitier:read',
+        'user:read', 'user:write'
     ])]
     private ?Date $date = null;
 
     #[ORM\OneToOne(mappedBy: 'hdd', cascade: ['persist', 'remove'])]
     #[Groups([
         'hdd:read', 'hdd:write',
-        'boitier:read'
+        'boitier:read',
+        'user:read', 'user:write'
     ])]
     private ?TypeHdd $typeHdd = null;
 
     #[ORM\OneToOne(mappedBy: 'hdd', cascade: ['persist', 'remove'])]
     #[Groups([
         'hdd:read', 'hdd:write',
-        'boitier:read'
+        'boitier:read',
+        'user:read', 'user:write'
     ])]
     private ?Taille $taille = null;
 

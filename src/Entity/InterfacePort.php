@@ -15,7 +15,8 @@ class InterfacePort
     #[Groups([
         'clavier:read',
         'interfacePort:read',
-        'souris:read', 'souris:write'
+        'souris:read',
+        'user:read'
     ])]
     private ?int $id = null;
 
@@ -23,7 +24,8 @@ class InterfacePort
     #[Groups([
         'clavier:read', 'clavier:write',
         'interfacePort:read', 'interfacePort:write',
-        'souris:read', 'souris:write'
+        'souris:read', 'souris:write',
+        'user:read', 'user:write'
     ])]
     private ?string $typeInterface = null;
 

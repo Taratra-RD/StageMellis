@@ -53,7 +53,7 @@ class TailleController extends AbstractController
     public function getTailleHdd()
     {
         // Retrieve all TailleHdd entities from the database
-        $tailleHdd = $this->entityManager->getRepository(TailleHdd::class)->findAll();
+        $tailleHdd = $this->entityManager->getRepository(Taille::class)->findAll();
 
         // Return a JSON response with the retrieved TailleHdd entities
         return $this->json($tailleHdd, 200, [], ['groups' => 'tailleHdd:read']);

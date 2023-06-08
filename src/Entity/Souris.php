@@ -13,13 +13,15 @@ class Souris
     #[ORM\GeneratedValue]
     #[ORM\Column]
     #[Groups([
-        'souris:read'
+        'souris:read',
+        'user:read'
     ])]
     private ?int $id = null;
 
     #[ORM\Column]
     #[Groups([
-        'souris:read', 'souris:write'
+        'souris:read', 'souris:write',
+        'user:read', 'user:write'
     ])]
     private ?int $nbrBouton = null;
 
@@ -34,25 +36,29 @@ class Souris
 
     #[ORM\OneToOne(inversedBy: 'souris', cascade: ['persist', 'remove'])]
     #[Groups([
-        'souris:read', 'souris:write'
+        'souris:read', 'souris:write',
+        'user:read', 'user:write'
     ])]
     private ?Etat $etat = null;
 
     #[ORM\OneToOne(inversedBy: 'souris', cascade: ['persist', 'remove'])]
     #[Groups([
-        'souris:read', 'souris:write'
+        'souris:read', 'souris:write',
+        'user:read', 'user:write'
     ])]
     private ?Date $date = null;
 
     #[ORM\OneToOne(mappedBy: 'souris', cascade: ['persist', 'remove'])]
     #[Groups([
-        'souris:read', 'souris:write'
+        'souris:read', 'souris:write',
+        'user:read', 'user:write'
     ])]
     private ?InterfacePort $interfacePort = null;
 
     #[ORM\OneToOne(mappedBy: 'souris', cascade: ['persist', 'remove'])]
     #[Groups([
-        'souris:read', 'souris:write'
+        'souris:read', 'souris:write',
+        'user:read', 'user:write'
     ])]
     private ?Marque $marque = null;
 
